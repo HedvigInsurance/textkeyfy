@@ -9,6 +9,7 @@
     "strictNullChecks": true,
     "declaration": true,
     "outDir": "dist",
+    "jsx": "react",
 
     "noUnusedLocals": true,
     "noUnusedParameters": true,
