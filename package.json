@@ -1,4 +1,9 @@
 {
+  "name": "@hedviginsurance/textkeyfy",
+  "author": "Sam Pettersson <sam@hedvig.com>, Johan Palmfjord <johan.palmfjord@hedvig.com>",
+  "license": "AGPL3",
+  "repository": "https://github.com/HedvigInsurance/textkeyfy",
+  "version": "0.1.0",
   "scripts": {
     "build": "NODE_ENV=production rm -rf dist && rollup -c",
     "dev": "NODE_ENV=development rm -rf dist && rollup -c -w",
