@@ -5,12 +5,12 @@ import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const plugins = [
-  resolve({ jsnext: true, main: true }),
+  resolve(),
   typescript({
     exclude: ['node_modules', '**/*.test.ts'],
   }),
   terser(),
-  commonjs({}),
+  commonjs(),
 ]
 const external = ['react', 'react-apollo', 'graphql-tag']
 
