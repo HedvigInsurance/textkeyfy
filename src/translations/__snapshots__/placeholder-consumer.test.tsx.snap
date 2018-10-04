@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should render correctly 1`] = `
+<Component
+  replacements={
+    Object {
+      "testElement": <div />,
+    }
+  }
+  textKey="mock"
+>
+  <Component
+    textKey="mock"
+  >
+    <div>
+      <Component
+        key="0"
+      >
+        <div />
+      </Component>
+       mock
+    </div>
+  </Component>
+</Component>
+`;
+
+exports[`should replace placeholders correctly 1`] = `
+<div>
+  <Component
+    key="0"
+  >
+    <div />
+  </Component>
+   mock
+</div>
+`;
+
+exports[`should replace placeholders correctly 2`] = `
+<div>
+  <Component
+    key="0"
+  >
+    <div />
+  </Component>
+  mock
+</div>
+`;
+
+exports[`should replace placeholders correctly 3`] = `
+<div>
+  {somethingelse}
+   mock
+</div>
+`;
+
+exports[`should replace placeholders correctly 4`] = `
+<div>
+  <Component
+    key="0"
+  >
+    <div />
+  </Component>
+   mock 
+  <Component
+    key="2"
+  >
+    testing
+  </Component>
+   mock 
+  <Component
+    key="4"
+  >
+    <div>
+      mock
+    </div>
+  </Component>
+</div>
+`;
