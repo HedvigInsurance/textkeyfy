@@ -1,7 +1,7 @@
 {
   "name": "@hedviginsurance/textkeyfy",
   "author": "Sam Pettersson <sam@hedvig.com>, Johan Palmfjord <johan.palmfjord@hedvig.com>",
-  "license": "AGPL3",
+  "license": "MIT",
   "repository": "https://github.com/HedvigInsurance/textkeyfy",
   "version": "0.1.0",
   "scripts": {
