@@ -15,7 +15,9 @@
   "devDependencies": {
     "@types/enzyme": "^3.1.14",
     "@types/enzyme-to-json": "^1.5.2",
+    "@types/graphql": "^14.0.1",
     "@types/jest": "^23.3.2",
+    "@types/react": "^16.4.14",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
@@ -29,6 +31,7 @@
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-terser": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-uglify": "^6.0.0",
     "ts-jest": "^23.10.0",
     "tslint": "^5.11.0",
@@ -37,15 +40,12 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "@types/graphql": "^14.0.1",
     "apollo-cache-inmemory": "^1.2.10",
     "apollo-client": "^2.4.2",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
-    "rambda": "^1.2.2",
     "react": "^16.5.2",
-    "react-apollo": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.17.0"
+    "react-apollo": "^2.2.4"
   },
   "husky": {
     "hooks": {
