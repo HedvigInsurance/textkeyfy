@@ -29,7 +29,7 @@ test("should fetch text keys if they're not provided from cache", async () => {
     {
       request: {
         query: TRANSLATIONS_QUERY,
-        variables: { code: 'sv_SE' },
+        variables: { code: 'sv_SE', project: Project.App },
       },
       result: {
         data: {

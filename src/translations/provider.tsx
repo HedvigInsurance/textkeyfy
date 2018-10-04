@@ -28,9 +28,9 @@ interface Data {
 }
 
 export const TRANSLATIONS_QUERY = gql`
-  query TranslationsQuery($code: String!) {
+  query TranslationsQuery($code: String!, $project: Project!) {
     languages(where: { code: $code }) {
-      translations(where: { project: App }) {
+      translations(where: { project: $project }) {
         key {
           value
         }
@@ -63,11 +63,12 @@ export interface TranslationsProviderProps {
 export const TranslationsProvider: React.SFC<TranslationsProviderProps> = ({
   children,
   code,
+  project,
   cachedKeys,
 }) => (
-  <Query<Data, { code: string; project?: Project }>
+  <Query<Data, { code: string; project: Project }>
     query={TRANSLATIONS_QUERY}
-    variables={{ code }}
+    variables={{ code, project }}
   >
     {({ data, loading }) => (
       <TranslationsContext.Provider
