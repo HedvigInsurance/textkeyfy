@@ -4,6 +4,9 @@
   "license": "MIT",
   "repository": "https://github.com/HedvigInsurance/textkeyfy",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "NODE_ENV=production rm -rf dist && rollup -c",
     "dev": "NODE_ENV=development rm -rf dist && rollup -c -w",
@@ -14,9 +17,13 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.14",
+    "@types/enzyme-to-json": "^1.5.2",
+    "@types/graphql": "^14.0.1",
     "@types/jest": "^23.3.2",
+    "@types/react": "^16.4.14",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
     "husky": "^0.14.3",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
@@ -27,6 +34,7 @@
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-terser": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-uglify": "^6.0.0",
     "ts-jest": "^23.10.0",
     "tslint": "^5.11.0",
@@ -35,9 +43,12 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "rambda": "^1.2.2",
+    "apollo-cache-inmemory": "^1.2.10",
+    "apollo-client": "^2.4.2",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
     "react": "^16.5.2",
-    "rollup-plugin-typescript2": "^0.17.0"
+    "react-apollo": "^2.2.4"
   },
   "husky": {
     "hooks": {
@@ -52,5 +63,6 @@
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js"
+  "browser": "dist/index.umd.js",
+  "types": "dist"
 }
