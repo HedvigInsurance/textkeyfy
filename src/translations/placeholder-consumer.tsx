@@ -14,8 +14,8 @@ interface TranslationsPlaceholderConsumerProps {
   replacements: Replacements
 }
 
-const placeholderRegex = new RegExp('({[a-zA-Z0-9]+})', 'g')
-const placeholderKeyRegex = new RegExp('([a-zA-Z0-9]+)', 'g')
+export const placeholderRegex = new RegExp('({[a-zA-Z0-9]+})', 'g')
+export const placeholderKeyRegex = new RegExp('([a-zA-Z0-9]+)', 'g')
 
 export const replacePlaceholders = (
   replacements: Replacements,
