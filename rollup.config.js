@@ -14,7 +14,7 @@ const plugins = [
   commonjs(),
   json(),
 ]
-const external = ['react', 'react-apollo', 'graphql-tag', 'react-markdown']
+const external = ['react', 'react-apollo', 'graphql-tag', 'react-markdown', 'react-markdown/with-html']
 
 export default [
   {
