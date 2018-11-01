@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as ReactMarkdown from 'react-markdown'
+import * as ReactMarkdown from 'react-markdown/with-html'
 import { TranslationsConsumer } from './consumer'
 import { placeholderKeyRegex, placeholderRegex } from './placeholder-consumer'
 
@@ -33,17 +33,19 @@ export const replaceStringPlaceholders = (
 
 interface TranslationsPlaceholderConsumerProps {
   textKey: string
-  replacements: Replacements
+  replacements?: Replacements
+  markdownProps?: ReactMarkdown.ReactMarkdownProps
 }
 
 export const MarkdownTranslation: React.SFC<
   TranslationsPlaceholderConsumerProps
-> = ({ textKey, replacements }) => (
+> = ({ textKey, replacements = {}, markdownProps = {} }) => (
   <TranslationsConsumer textKey={textKey}>
     {(text) => (
       <ReactMarkdown
         source={replaceStringPlaceholders(text, replacements).join('')}
         escapeHtml={false}
+        {...markdownProps}
       />
     )}
   </TranslationsConsumer>

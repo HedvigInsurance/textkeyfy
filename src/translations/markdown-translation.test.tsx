@@ -22,3 +22,21 @@ it('renders correctly', () => {
 
   expect(wrapper.find('h1').text()).toBe('foo mock')
 })
+
+it('renders links n stuff', () => {
+  const testString =
+    'Genom att trycka på “Signera med BankID” godkänner jag att jag har tagit del av {preBuy}, <a href="#">hej</a> och att mina personuppgifter behandlas enligt {gdpr}.'
+  const gdpr = 'good stuff'
+  const wrapper = mount(
+    <TranslationsContext.Provider value={{ textKeys: { mock: testString } }}>
+      <MarkdownTranslation
+        textKey="mock"
+        replacements={{
+          gdpr,
+        }}
+      />
+    </TranslationsContext.Provider>,
+  )
+
+  expect(wrapper.find('a').text()).toBe('hej')
+})
