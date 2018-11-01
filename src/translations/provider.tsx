@@ -15,7 +15,7 @@ interface Key {
 }
 
 interface Translation {
-  key: Key
+  key?: Key
   text: string
 }
 
@@ -42,8 +42,11 @@ export const TRANSLATIONS_QUERY = gql`
 
 export const normalizeTranslations = (translations: Translation[]) =>
   translations.reduce((acc: TextKeys, curr: Translation) => {
-    acc[curr.key.value] = curr.text
-    return acc
+    if (curr.key && curr.key.value) {
+      return { ...acc, [curr.key.value]: curr.text }
+    }
+
+    return { ...acc }
   }, {})
 
 const getTextKeys = (data?: Data) => {
