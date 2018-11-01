@@ -38,7 +38,5 @@ it('renders links n stuff', () => {
     </TranslationsContext.Provider>,
   )
 
-  console.log(wrapper.find("span").debug())
-
   expect(wrapper.find('a').text()).toBe('hej')
 })
