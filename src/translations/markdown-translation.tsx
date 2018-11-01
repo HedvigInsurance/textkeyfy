@@ -32,18 +32,18 @@ export const replaceStringPlaceholders = (
 }
 
 interface TranslationsPlaceholderConsumerProps {
-  children: (nodes: React.ReactNode[]) => React.ReactNode
   textKey: string
   replacements: Replacements
 }
 
-export const MarkdownConsumer: React.SFC<
+export const MarkdownTranslation: React.SFC<
   TranslationsPlaceholderConsumerProps
 > = ({ textKey, replacements }) => (
   <TranslationsConsumer textKey={textKey}>
     {(text) => (
       <ReactMarkdown
         source={replaceStringPlaceholders(text, replacements).join('')}
+        escapeHtml={false}
       />
     )}
   </TranslationsConsumer>
