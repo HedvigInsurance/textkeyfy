@@ -72,6 +72,22 @@ test('should replace placeholders correctly', () => {
     withMultiplePlaceholdersWrapper.containsMatchingElement(TestElement2),
   ).toBe(true)
   expect(toJson(withMultiplePlaceholdersWrapper)).toMatchSnapshot()
+
+  const TestElement3 = <div>mock</div>
+
+  const withUnderscores = replacePlaceholders(
+    {
+      mock_key: TestElement3,
+    },
+    '{mock_key} foo bar baz',
+  )
+
+  const withUnderscoresWrapper = mount(<div>{withUnderscores}</div>)
+
+  expect(withUnderscoresWrapper.containsMatchingElement(TestElement3)).toBe(
+    true,
+  )
+  expect(toJson(withUnderscoresWrapper)).toMatchSnapshot()
 })
 
 test('it should render correctly', () => {

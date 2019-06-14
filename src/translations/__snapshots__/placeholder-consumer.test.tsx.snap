@@ -76,3 +76,16 @@ exports[`should replace placeholders correctly 4`] = `
   </Component>
 </div>
 `;
+
+exports[`should replace placeholders correctly 5`] = `
+<div>
+  <Component
+    key="0"
+  >
+    <div>
+      mock
+    </div>
+  </Component>
+   foo bar baz
+</div>
+`;
