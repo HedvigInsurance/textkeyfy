@@ -61,6 +61,7 @@ export interface TranslationsProviderProps {
   code: string
   project: Project
   cachedKeys?: TextKeys
+  loader?: () => React.ReactNode
 }
 
 export const TranslationsProvider: React.SFC<TranslationsProviderProps> = ({
@@ -68,6 +69,7 @@ export const TranslationsProvider: React.SFC<TranslationsProviderProps> = ({
   code,
   project,
   cachedKeys,
+  loader,
 }) => (
   <Query<Data, { code: string; project: Project }>
     query={TRANSLATIONS_QUERY}
@@ -79,7 +81,7 @@ export const TranslationsProvider: React.SFC<TranslationsProviderProps> = ({
           textKeys: cachedKeys || getTextKeys(data),
         }}
       >
-        {loading ? null : children}
+        {loading ? (loader ? loader() : null) : children}
       </TranslationsContext.Provider>
     )}
   </Query>
