@@ -51,7 +51,7 @@
     "react": "^16.5.2",
     "react-apollo": "^2.2.4",
     "react-markdown": "^4.0.3",
-    "showdown": "^1.8.7"
+    "showdown": "^1.9.1"
   },
   "husky": {
     "hooks": {
