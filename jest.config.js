@@ -1,10 +1,9 @@
 module.exports = {
   transform: {
-    '\\.tsx?$': 'ts-jest',
+    '\\.ts?$': 'ts-jest',
   },
-  testRegex: '\\.test\\.(ts|tsx|js)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
-  setupFiles: ['<rootDir>/test-setup-enzyme.js'],
+  testRegex: '\\.test\\.(ts|js)$',
+  moduleFileExtensions: ['ts', 'js'],
   globals: {
     'ts-jest': { diagnostics: { ignoreCodes: [151001] } },
   },
