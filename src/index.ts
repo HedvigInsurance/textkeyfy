@@ -7,9 +7,9 @@ export const splitByPlaceholder = (text: string) =>
 export const isPlaceholder = (text: string) => getPlaceholderRegex().test(text)
 
 export type Replacements = Record<string, string | number>
-export const replacePlaceholders = (
+export const resolvePlaceholders = (
   resolvedKey: string,
-  replacements?: Replacements
+  replacements?: Replacements,
 ) => {
   if (!replacements) {
     return resolvedKey

@@ -1,4 +1,4 @@
-import { replacePlaceholders, isPlaceholder, splitByPlaceholder } from './index'
+import { isPlaceholder, resolvePlaceholders, splitByPlaceholder } from './index'
 
 describe('splitByPlaceholder', () => {
   it('splits by placeholder', () => {
@@ -24,20 +24,20 @@ describe('isPlaceholder', () => {
   })
 })
 
-describe('Replace placeholders', () => {
-  it('replaces valid placeholder', () => {
+describe('Resolve placeholders', () => {
+  it('resolves valid placeholder', () => {
     const replacements = { BAR: 'bar' }
 
-    expect(replacePlaceholders('foo {BAR} baz', replacements)).toBe(
+    expect(resolvePlaceholders('foo {BAR} baz', replacements)).toBe(
       'foo bar baz',
     )
   })
 
   it('ignores unknown placeholder', () => {
-    expect(replacePlaceholders('foo {BAR} baz')).toBe('foo {BAR} baz')
+    expect(resolvePlaceholders('foo {BAR} baz')).toBe('foo {BAR} baz')
 
     const replacements = { BAR: 'bar' }
-    expect(replacePlaceholders('foo {NOT_BAR} baz', replacements)).toBe(
+    expect(resolvePlaceholders('foo {NOT_BAR} baz', replacements)).toBe(
       'foo {NOT_BAR} baz',
     )
   })
